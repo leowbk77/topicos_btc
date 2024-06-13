@@ -1,2 +1,2 @@
 # topicos_btc
-Repositório de Tópicos de segurança: Bitcoin/Blockchain/Criptografia
+Repositório de praticas de Tópicos de segurança: Bitcoin/Blockchain/Criptografia
