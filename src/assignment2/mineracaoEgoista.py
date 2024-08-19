@@ -1,5 +1,4 @@
-"""
-Instruções:
+"""Instruções:
 Pegar a lista com os Ids dos mineradores. Essa lista tem um ano de mineração. 
 Dividir a lista em meses: 1/12 
 Escolher o mes do seu aniversário
