@@ -1,5 +1,4 @@
 # topicos_btc
-<<<<<<< HEAD
 Repositório de Tópicos de segurança: Bitcoin/Blockchain/Criptografia
 
 ### _Assignments_
@@ -14,6 +13,5 @@ Repositório de Tópicos de segurança: Bitcoin/Blockchain/Criptografia
 8. [🛠](/src/assignment8)
 9. [🛠](/src/assignment9)
 10. [🛠](/src/assignment10)
-=======
+
 Repositório de praticas de Tópicos de segurança: Bitcoin/Blockchain/Criptografia
->>>>>>> 451471fba6aaedcfbe30f8ab524e83373010e558
