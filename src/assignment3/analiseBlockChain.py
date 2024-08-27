@@ -6,7 +6,7 @@ Pegar o último bloco da blockchain
 Encontrar a transação de Coinbase
 Listar os endereços que estão recebendo os Bitcoins minerados + taxas
 Imprimir a taxa paga por cada transacao do bloco
-Impimir o numero de entradas e o número de saidas de cada transacao
+Imprimir o numero de entradas e o número de saidas de cada transacao
 """
 import requests
 import time
@@ -49,24 +49,28 @@ def clear_adresses(adressList):
     dic = dict.fromkeys(adressList, "temp")
     return list(dic.keys())
 
-# Obtem os endereços de saída e as taxas de cada transação
-def get_out_adresses_and_tx_fees(block):
+# Obtem os endereços e as taxas das transações
+def get_tx_infos(block):
     outputAdresses = list()
     txFees = list()
+    txInOuts = list()
     for transaction in block["tx"]:
-        txFees.append(transaction["fee"])
+        txFees.append(str(transaction["fee"]))
         for output in transaction["out"]:
             if 'addr' in output.keys():
                 outputAdresses.append(output["addr"])
+        txInOuts.append(f'Transaction:{transaction["hash"]}\ninputs:{len(transaction["inputs"])} outputs:{len(transaction["out"])}')
     to_file(clear_adresses(outputAdresses), "enderecos.txt")
     to_file(txFees, "taxas.txt")
+    to_file(txInOuts, "inouts.txt")
 
 print('Encontrando hash do bloco mais recente...')
 latestBlockHash = find_latest_block_hash()
 print('delay: 5 sec...')
 time.sleep(5)
 latestBlockJson = block_info(latestBlockHash)
-print('Coinbase:')
+print('\nCoinbase:')
 print(get_coinbase(latestBlockJson))
+print('\n')
 print('Escrevendo arquivos...')
-get_out_adresses_and_tx_fees(latestBlockJson)
+get_tx_infos(latestBlockJson)
